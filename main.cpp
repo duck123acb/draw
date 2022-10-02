@@ -1,8 +1,12 @@
 #include "raylib.h"
+#include <vector>
+#include "Pixel.hpp"
 
 void setup()
 {
 }
+
+std::vector<Pixel> pixels = {};
 
 int main()
 {
@@ -19,7 +23,11 @@ int main()
 	while (!WindowShouldClose())
 	{
 		//** LOGIC **//
-		
+		if (IsMouseButtonDown(0))
+		{
+			pixels.push_back(Pixel(GetMouseX(), GetMouseY(), 10, 10));
+		}
+
 		//** DRAWING **//
 		// starts drawing the scene
 		BeginDrawing();
@@ -27,6 +35,11 @@ int main()
 		ClearBackground(BLACK);
 		
 		DrawFPS(10, 10);
+
+		for (int i = 0; i < pixels.size(); i++)
+		{
+			pixels[i].Draw();
+		}
 		
 		// end the drawing of the scene
 		EndDrawing();
