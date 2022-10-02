@@ -2,19 +2,18 @@
 
 class Pixel
 {
-	public:
-	float x, y, width, height;
+public:
+	float x, y, size;
 
-	Pixel(float aX, float aY, float aWidth, float aHeight)
+	Pixel(float aX, float aY, float aSize)
 	{
 		x = aX;
 		y = aY;
-		width = aWidth;
-		height = aHeight;
+		size = aSize;
 	}
 
 	void Draw()
 	{
-		DrawRectangle(x, y, width, height, RAYWHITE);
+		DrawRectangle(x, y, size, size, RAYWHITE);
 	}
 };

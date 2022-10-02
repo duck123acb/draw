@@ -2,11 +2,26 @@
 #include <vector>
 #include "Pixel.hpp"
 
-void setup()
+// for testing
+// #include <iostream>
+
+std::vector<Pixel> pixels;
+float pixelSize;
+
+void clear()
 {
+	pixels.clear();
 }
 
-std::vector<Pixel> pixels = {};
+// void pixelSizeUp(float amt)
+// {
+// 	pixelSize += amt;
+// }
+
+// void pixelSizeDown(float amt)
+// {
+// 	pixelSize += amt;
+// }
 
 int main()
 {
@@ -16,17 +31,24 @@ int main()
 	// limits FPS to monitors refresh rate.
 	SetWindowState(FLAG_VSYNC_HINT);
 	
-	// sets up game variables
-	setup();
-	
 	// game code
 	while (!WindowShouldClose())
 	{
 		//** LOGIC **//
 		if (IsMouseButtonDown(0))
 		{
-			pixels.push_back(Pixel(GetMouseX(), GetMouseY(), 10, 10));
+			pixels.push_back(Pixel(GetMouseX(), GetMouseY(), pixelSize));
 		}
+
+		if (IsKeyDown(KEY_C)) clear();
+
+		pixelSize += GetMouseWheelMove();
+		if (pixelSize < 1)
+		{
+			pixelSize = 1;
+		}
+
+		// std::cout << GetMouseWheelMove() << "\n";
 
 		//** DRAWING **//
 		// starts drawing the scene
