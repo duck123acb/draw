@@ -1,4 +1,7 @@
 # Draw (name will be updated)
+About: https://github.com/duck123acb/draw#about
+Building from source: https://github.com/duck123acb/draw#how-to-build-from-source
+How to use: https://github.com/duck123acb/draw#how-to-build-from-source
 
 ## About
 a simple drawing app made with c++ and raylib
