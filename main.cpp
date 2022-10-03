@@ -13,16 +13,6 @@ void clear()
 	pixels.clear();
 }
 
-// void pixelSizeUp(float amt)
-// {
-// 	pixelSize += amt;
-// }
-
-// void pixelSizeDown(float amt)
-// {
-// 	pixelSize += amt;
-// }
-
 int main()
 {
 	// starts a raylib window
